@@ -7,8 +7,8 @@
  * Author: You
  */
 
-include __DIR__ . '/src/class-wp-plugin-template-initializer.php';
+include __DIR__ . '/src/class-wp-plugin-template.php';
 
-$plugin = new WP_Plugin_Template_Initializer(__FILE__);
+$plugin = new WP_Plugin_Template(__FILE__);
 
-$plugin->init();
+$plugin->run();
