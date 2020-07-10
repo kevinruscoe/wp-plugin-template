@@ -2,14 +2,15 @@
 
 class WP_Plugin_Template
 {
-    const PLUGIN_NAME = "M";
+    protected $file;
 
-    public function __construct()
+    public function __construct(string $file)
     {
-        // register plugin activation/deactivation hooks
-        register_activation_hook( __FILE__, array( $this, 'activate' ) );
-        register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
+        $this->file = $file;
 
+        // register plugin activation/deactivation hooks
+        register_activation_hook( $this->file, array( $this, 'activate' ) );
+        register_deactivation_hook( $this->file, array( $this, 'deactivate' ) );
     }
 
     public function activate()
