@@ -8,22 +8,10 @@ class WP_Plugin_Template
     {
         $this->file = $file;
 
-        // register plugin activation/deactivation hooks
-        register_activation_hook( $this->file, array( $this, 'activate' ) );
-        register_deactivation_hook( $this->file, array( $this, 'deactivate' ) );
+        $this-init();
     }
 
-    public function activate()
-    {
-        // TODO
-    }
-
-    public function deactivate()
-    {
-        // TODO
-    }
-
-    public function run()
+    public function init()
     {
         // TODO
     }
